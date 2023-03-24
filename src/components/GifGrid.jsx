@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { GifCard } from './index';
 import useFetchGifs from '../hooks/useFetchGifs';
 
+/* A functional component that is exporting a function called GifGrid. */
 export const GifGrid = ({ category }) => {
   const { images, isLoading } = useFetchGifs(category);
   return (

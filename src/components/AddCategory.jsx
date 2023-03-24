@@ -1,5 +1,10 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
+/**
+ * It's a form that takes a value from an input and passes it to a callback function
+ * @returns A form with an input
+ */
 export const AddCategory = ({ onNewCategory }) => {
   const [categoryValue, setCategoryValue] = useState('');
 
@@ -15,7 +20,7 @@ export const AddCategory = ({ onNewCategory }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label='form'>
       <input
         name='categpria'
         id='categoria'
@@ -26,4 +31,8 @@ export const AddCategory = ({ onNewCategory }) => {
       ></input>
     </form>
   );
+};
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired,
 };

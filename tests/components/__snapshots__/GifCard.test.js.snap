@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en el componente GifCard Debe hacer match con el snapshot 1`] = `
+exports[`Test on GifCard Must match snapshot 1`] = `
 <div>
   <div
     class="card"
