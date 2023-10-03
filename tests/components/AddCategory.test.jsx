@@ -13,7 +13,6 @@ describe('Must change textbox value', () => {
 
   test('Must call onNewCategory if input contains value', () => {
     const inputValue = 'Saitama';
-
     const onNewCategory = jest.fn();
 
     render(<AddCategory onNewCategory={onNewCategory} />);
@@ -36,5 +35,8 @@ describe('Must change textbox value', () => {
 
     const form = screen.getByRole('form');
     fireEvent.submit(form);
+
+    expect(onNewCategory).toHaveBeenCalledTimes(0);
+    expect(onNewCategory).not.toHaveBeenCalled();
   });
 });

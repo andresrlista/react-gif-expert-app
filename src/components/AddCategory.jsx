@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -8,9 +8,9 @@ import PropTypes from 'prop-types';
 export const AddCategory = ({ onNewCategory }) => {
   const [categoryValue, setCategoryValue] = useState('');
 
-  const onInputChangeCategory = ({ target }) => {
+  const onInputChangeCategory = useCallback(({ target }) => {
     setCategoryValue(target.value);
-  };
+  }, []);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -22,11 +22,12 @@ export const AddCategory = ({ onNewCategory }) => {
   return (
     <form onSubmit={onSubmit} aria-label='form'>
       <input
-        name='categpria'
+        name='categoria'
         id='categoria'
+        data-testid='categoria'
         type='text'
         value={categoryValue}
-        placeholder='Burscar gifs...'
+        placeholder='Search gifs...'
         onChange={onInputChangeCategory}
       ></input>
     </form>
